@@ -1,6 +1,5 @@
 // Use connect method to connect to the server
 var MongoClient = require('mongodb').MongoClient
-  , assert = require('assert');
 var utils = require('./utils')
 
 exports.connectToDatabase = function(callback){
