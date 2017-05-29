@@ -21,10 +21,11 @@ app.get('/test', function(req, res){
 //MARK: Add an item
 app.post('/addItem', function(req, res){
 
-  var collection = db.collection('items');
+
 
   database.connectToDatabase(function(db){
 
+  var collection = db.collection('items');
     collection.insertOne({
       title:req.body.title,
       description: req.body.description,
