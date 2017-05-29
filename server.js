@@ -33,8 +33,7 @@ app.post('/addItem', function(req, res){
       done:false,
     });
   });
-
-  res.write("new Item added");
+  res.send("new Item added");
 });
 
 //MARK: Add an item
@@ -46,6 +45,7 @@ app.post('/checkitem', function(req, res){
   collection.findOneAndUpdate({ title: req.body.title},{ $set: { done: true}}, function(err, itemFound) {
 
     if (itemFound){
+        db.close();
           res.send();
       }
   });
@@ -65,7 +65,7 @@ app.get('/jeanpierre', function(req, res){
       // If the item is null then the cursor is exhausted/empty and closed
       if(item == null) {
           db.close(); // you may not want to close the DB if you have more code....
-            res.send(response);
+          res.send(response);
           return;
       }
       if (item.done){
