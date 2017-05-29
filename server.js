@@ -28,7 +28,7 @@ app.post('/addItem', function(req, res){
     collection.insertOne({
       title:req.body.title,
       description: req.body.description,
-      done:req.body.done,
+      done:false,
       function(err, result) {
         if (err){
           console.log("Error adding item",err);
