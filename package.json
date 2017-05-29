@@ -1,0 +1,8 @@
+{
+    "name": "ma-todolist",
+    "version": "0.1.0",
+    "dependencies": {
+        "express": "~4.11.0"
+    },
+    "description": "Un gestionnaire de todolist ultra basique"
+}
